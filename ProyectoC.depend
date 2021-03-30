@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1477955554 source:/home/alumno/Escritorio/Compartido/ProyectoC/lista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"errores.h"
+	"lista.h"
+
+1475793282 /home/alumno/Escritorio/Compartido/ProyectoC/errores.h
+	<stdlib.h>
+
+1477953535 source:/home/alumno/Escritorio/Compartido/ProyectoC/pila.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"errores.h"
+	"pila.h"
+
+1475804502 /home/alumno/Escritorio/Compartido/ProyectoC/pila.h
+
+1477953225 source:/home/alumno/Escritorio/Compartido/ProyectoC/evaluar.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"pila.h"
+	"lista.h"
+	"errores.h"
+
+1475894063 /home/alumno/Escritorio/Compartido/ProyectoC/lista.h
+

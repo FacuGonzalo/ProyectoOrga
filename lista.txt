@@ -1,0 +1,95 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "errores.h"
+
+typedef struct celda{
+    int elementos[4];
+    struct celda *proxima;
+} tcelda;
+
+typedef struct lista_eficiente{
+    unsigned int cantidad_elem;
+    tcelda *primeraCelda;
+} *tlista;
+
+
+tlista listaCrear(){
+    tlista nueva;
+    nueva->cantidad_elem=0;
+    nueva->primeraCelda=NULL;
+
+    return nueva;
+}
+
+int listaCantidad(tlista lista){
+    if (lista==NULL)
+        exit(LST_NO_INI);
+    return (lista->cantidad_elem);
+}
+
+
+int listaInsertar(tlista lista, unsigned int pos, int elem){
+    int posicion=0;
+    //int contCelda=0;
+    tcelda *ultima= NULL;
+    tcelda *aux=lista->primeraCelda;
+
+    while(aux->proxima){
+        ultima= aux;
+        aux= aux->proxima;
+    }
+
+
+    if (pos>listaCantidad(lista))
+        return 1;
+    if (pos==listaCantidad(lista))
+        if (pos!=1)
+            while(posicion!=pos){
+                if (posicion%4==0)
+                    tcelda *celda= malloc(sizeof(tcelda));
+
+                posicion++;
+            }
+        else{
+            lista->primeraCelda->elementos[0]=elem;
+            lista->primeraCelda->proxima=NULL;
+            lista->cantidad_elem=1;
+        }
+
+
+
+
+
+
+}
+
+
+int listaEliminar(tlista lista, unsigned int pos){
+
+
+
+}
+
+int listaAdjuntar(tlista lista, int elem){
+    if (lista->primeraCelda)
+        exit(LST_NO_INI);
+}
+
+int listaDestruir(tlista *lista){
+    if (lista==NULL)
+        exit(LST_NO_INI);
+
+    tcelda *celda= lista->primeraCelda;
+    tcelda *anterior=NULL;
+
+    while(celda!=NULL){
+        anterior=celda;
+        celda->proxima;
+        free(anterior);
+    }
+
+    lista=NULL;
+    return 0;
+}

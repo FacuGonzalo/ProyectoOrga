@@ -1,0 +1,61 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "errores.h"
+
+typedef struct nodo{
+ char* c;
+ struct nodo* siguiente;
+
+} *tpila;
+
+
+tpila pilaCrear(){
+    tpila nueva=NULL;
+    return nueva;
+}
+
+int pilaVacia(tpila pila){
+    if (pila==NULL)
+        exit(PIL_NO_INI);
+    else
+        return ((pila->c) ==NULL);
+}
+
+int apilar(tpila *pila, char *str){
+    if (*pila==NULL)
+        exit(PIL_NO_INI);
+
+    tpila nodo= malloc(sizeof(tpila));
+    if (nodo==NULL)//no hay memoria pues malloc dio nulo.
+        return 1;
+
+    nodo-> c=str;
+    nodo-> siguiente=*pila;
+    *pila= nodo;
+return 0;
+}
+
+
+char* tope(tpila pila){
+    if (pila==NULL)
+        exit(PIL_VACIA);
+
+    return (pila->c);
+}
+
+char* desapilar(tpila *pila){
+    if (pilaVacia(*pila)!=0){
+        char *res= malloc(sizeof(char));
+        res= ((*pila)->c);
+        *pila= (*pila)->siguiente;
+        return res;
+    }
+    else
+        exit(PIL_VACIA);
+}
+
+
+
+
